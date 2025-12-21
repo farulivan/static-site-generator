@@ -1,5 +1,5 @@
 import unittest
-from converters import text_node_to_html_node
+from converters import text_node_to_html_node, text_to_textnodes
 from textnode import TextNode, TextType
 
 class TestConverters(unittest.TestCase):
@@ -41,14 +41,22 @@ class TestConverters(unittest.TestCase):
         self.assertEqual(html_node.value, "")
         self.assertEqual(html_node.props, {"src": "https://example.com/image.png", "alt": "alt text"})
 
-    def test_text_node_to_html_node_unsupported(self):
-        # Simulate unsupported TextType by monkey-patching or using invalid
-        # Since TextType is enum, create a mock or test the else branch indirectly
-        # For simplicity, test that if we had an unsupported, it raises
-        # But since all are covered, perhaps skip or use a custom TextType
-        # For now, assume all supported, but to test else, we can modify TextType temporarily, but that's complex
-        # Since the else is unreachable in current code, perhaps no test needed, or add a comment
-        pass  # All TextTypes are supported; else branch for future extensions
+    def test_text_to_textnodes(self):
+        text = "This is **text** with an _italic_ word and a `code block` and an ![obi wan image](https://i.imgur.com/fJRm4Vk.jpeg) and a [link](https://boot.dev)"
+        result = text_to_textnodes(text)
+        expected = [
+            TextNode("This is ", TextType.TEXT),
+            TextNode("text", TextType.BOLD),
+            TextNode(" with an ", TextType.TEXT),
+            TextNode("italic", TextType.ITALIC),
+            TextNode(" word and a ", TextType.TEXT),
+            TextNode("code block", TextType.CODE),
+            TextNode(" and an ", TextType.TEXT),
+            TextNode("obi wan image", TextType.IMAGE, "https://i.imgur.com/fJRm4Vk.jpeg"),
+            TextNode(" and a ", TextType.TEXT),
+            TextNode("link", TextType.LINK, "https://boot.dev"),
+        ]
+        self.assertEqual(result, expected)
 
 
 if __name__ == "__main__":
