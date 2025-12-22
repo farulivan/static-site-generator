@@ -1,6 +1,7 @@
 import unittest
-from converters import markdown_to_blocks, text_node_to_html_node, text_to_textnodes
-from textnode import TextNode, TextType
+from converters import markdown_to_blocks, text_node_to_html_node, text_to_textnodes, block_to_block_type
+from textnode import TextNode
+from enums import BlockType, TextType
 
 class TestConverters(unittest.TestCase):
     def test_text_node_to_html_node_text(self):
@@ -94,6 +95,42 @@ This is the same paragraph on a new line
 
     def test_markdown_to_blocks_only_newlines(self):
         self.assertEqual(markdown_to_blocks("\n\n\n"), [])
+
+    def test_block_to_block_type_heading(self):
+        self.assertEqual(block_to_block_type("# Heading"), BlockType.HEADING)
+        self.assertEqual(block_to_block_type("## Heading"), BlockType.HEADING)
+        self.assertEqual(block_to_block_type("###### Heading"), BlockType.HEADING)
+
+    def test_block_to_block_type_code(self):
+        self.assertEqual(block_to_block_type("```code```"), BlockType.CODE)
+        self.assertEqual(block_to_block_type("```\ncode\n```"), BlockType.CODE)
+
+    def test_block_to_block_type_quote(self):
+        self.assertEqual(block_to_block_type("> quote"), BlockType.QUOTE)
+        self.assertEqual(block_to_block_type("> line1\n> line2"), BlockType.QUOTE)
+
+    def test_block_to_block_type_unordered_list(self):
+        self.assertEqual(block_to_block_type("- item"), BlockType.UNORDERED_LIST)
+        self.assertEqual(block_to_block_type("- item1\n- item2"), BlockType.UNORDERED_LIST)
+
+    def test_block_to_block_type_ordered_list(self):
+        self.assertEqual(block_to_block_type("1. item"), BlockType.ORDERED_LIST)
+        self.assertEqual(block_to_block_type("1. item1\n2. item2\n3. item3"), BlockType.ORDERED_LIST)
+        # Invalid: not starting from 1
+        self.assertEqual(block_to_block_type("2. item"), BlockType.PARAGRAPH)
+        # Invalid: not sequential
+        self.assertEqual(block_to_block_type("1. item\n3. item"), BlockType.PARAGRAPH)
+        # Invalid: not numbers
+        self.assertEqual(block_to_block_type("a. item"), BlockType.PARAGRAPH)
+
+    def test_block_to_block_type_paragraph(self):
+        self.assertEqual(block_to_block_type("Plain text"), BlockType.PARAGRAPH)
+        self.assertEqual(block_to_block_type("Text\nMore text"), BlockType.PARAGRAPH)
+        # Heading without space
+        self.assertEqual(block_to_block_type("#No space"), BlockType.PARAGRAPH)
+        # Code not starting/ending
+        self.assertEqual(block_to_block_type("```code"), BlockType.PARAGRAPH)
+
 
 if __name__ == "__main__":
     unittest.main()

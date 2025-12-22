@@ -1,6 +1,7 @@
 import unittest
 from text_utils import split_nodes_delimiter, extract_markdown_images, extract_markdown_links, split_nodes_image, split_nodes_link
-from textnode import TextNode, TextType
+from textnode import TextNode
+from enums import TextType
 
 class TestTextUtils(unittest.TestCase):
     def test_split_nodes_delimiter_basic(self):
