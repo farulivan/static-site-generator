@@ -4,11 +4,17 @@ class LeafNode(HTMLNode):
     def __init__(self, tag: str, value: str, props: dict | None = None):
         super().__init__(tag=tag, value=value, children=None, props=props)
     
-    def to_html(self) -> str:
-        if not self.tag:
+    def to_html(self):
+        if self.tag is None:
             return self.value
-        if self.value is None:
-            raise ValueError("Value should not be None")
-        if not self.value:
-            raise ValueError("Value cannot be empty")
-        return f"<{self.tag}{self.props_to_html()}>{self.value}</{self.tag}>"
+        if self.value is None or self.value == "":
+            if self.tag not in ['img', 'br', 'hr', 'input', 'meta']:
+                raise ValueError("Value cannot be empty")
+        # build the tag
+        attrs = ""
+        if self.props:
+            attrs = " " + " ".join(f'{k}="{v}"' for k, v in self.props.items())
+        if self.tag in ['img', 'br', 'hr', 'input', 'meta']:
+            return f"<{self.tag}{attrs}>"
+        else:
+            return f"<{self.tag}{attrs}>{self.value}</{self.tag}>"

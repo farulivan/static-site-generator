@@ -11,6 +11,7 @@ from converters import (
     quote_block_to_html_node,
     unordered_list_block_to_html_node,
     ordered_list_block_to_html_node,
+    extract_title,
 )
 from textnode import TextNode
 from enums import BlockType, TextType
@@ -288,6 +289,32 @@ code block
         node = ordered_list_block_to_html_node(block)
         html = node.to_html()
         self.assertEqual(html, "<ol><li>First</li><li>Second</li></ol>")
+
+    def test_extract_title_simple(self):
+        md = "# Hello"
+        self.assertEqual(extract_title(md), "Hello")
+
+    def test_extract_title_with_spaces(self):
+        md = "#  Hello World  "
+        self.assertEqual(extract_title(md), "Hello World")
+
+    def test_extract_title_not_first_line(self):
+        md = "\n\n# Title\n"
+        self.assertEqual(extract_title(md), "Title")
+
+    def test_extract_title_no_h1(self):
+        md = "## Subtitle\nNo h1"
+        with self.assertRaises(ValueError):
+            extract_title(md)
+
+    def test_extract_title_empty_after_hash(self):
+        md = "#"
+        self.assertEqual(extract_title(md), "")
+
+    def test_extract_title_no_space(self):
+        md = "#Hello"
+        with self.assertRaises(ValueError):
+            extract_title(md)
 
 
 if __name__ == "__main__":

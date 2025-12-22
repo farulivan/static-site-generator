@@ -29,7 +29,7 @@ def text_to_textnodes(text: str) -> List[TextNode]:
     nodes = split_nodes_delimiter(nodes, "`", TextType.CODE)
     nodes = split_nodes_image(nodes)
     nodes = split_nodes_link(nodes)
-    return nodes
+    return [node for node in nodes if node.text]
 
 def markdown_to_blocks(markdown: str) -> List[str]:
     return [block.strip() for block in markdown.split("\n\n") if block.strip()]
@@ -142,3 +142,10 @@ def markdown_to_html_node(markdown: str) -> HTMLNode:
         elif block_type == BlockType.ORDERED_LIST:
             children.append(ordered_list_block_to_html_node(block))
     return ParentNode("div", children)
+
+def extract_title(markdown: str) -> str:
+    lines = markdown.split('\n')
+    for line in lines:
+        if line.startswith('# '):
+            return line[2:].strip()
+    raise ValueError("No h1 header found")
