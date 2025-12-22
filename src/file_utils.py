@@ -17,6 +17,7 @@ def copy_directory_recursive(src_dir, dest_dir):
     
     for root, dirs, files in os.walk(src_dir):
         rel_path = os.path.relpath(root, src_dir)
+        rel_path = "" if rel_path == "." else rel_path
         dest_root = os.path.join(dest_dir, rel_path)
         if not os.path.exists(dest_root):
             os.makedirs(dest_root)
