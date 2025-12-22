@@ -1,8 +1,7 @@
-from textnode import TextNode, TextType
+from file_utils import copy_directory_recursive
 
 def main():
-    textnode = TextNode("This is some anchor text", TextType.LINK, "https://www.boot.dev")
-    print(textnode)
-    
+    copy_directory_recursive("static", "public")
+
 if __name__ == "__main__":
     main()
