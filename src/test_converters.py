@@ -1,5 +1,5 @@
 import unittest
-from converters import text_node_to_html_node, text_to_textnodes
+from converters import markdown_to_blocks, text_node_to_html_node, text_to_textnodes
 from textnode import TextNode, TextType
 
 class TestConverters(unittest.TestCase):
@@ -58,6 +58,42 @@ class TestConverters(unittest.TestCase):
         ]
         self.assertEqual(result, expected)
 
+    def test_markdown_to_blocks(self):
+        md = """
+This is **bolded** paragraph
+
+This is another paragraph with _italic_ text and `code` here
+This is the same paragraph on a new line
+
+- This is a list
+- with items
+"""
+        blocks = markdown_to_blocks(md)
+        self.assertEqual(
+            blocks,
+            [
+                "This is **bolded** paragraph",
+                "This is another paragraph with _italic_ text and `code` here\nThis is the same paragraph on a new line",
+                "- This is a list\n- with items",
+            ],
+        )
+
+    def test_markdown_to_blocks_empty(self):
+        self.assertEqual(markdown_to_blocks(""), [])
+
+    def test_markdown_to_blocks_single_block(self):
+        self.assertEqual(markdown_to_blocks("Single block"), ["Single block"])
+
+    def test_markdown_to_blocks_with_empty_blocks(self):
+        md = "\n\n\n\nBlock\n\n\n\n"
+        self.assertEqual(markdown_to_blocks(md), ["Block"])
+
+    def test_markdown_to_blocks_leading_trailing_whitespace(self):
+        md = "  \n\n  Block  \n\n  "
+        self.assertEqual(markdown_to_blocks(md), ["Block"])
+
+    def test_markdown_to_blocks_only_newlines(self):
+        self.assertEqual(markdown_to_blocks("\n\n\n"), [])
 
 if __name__ == "__main__":
     unittest.main()
