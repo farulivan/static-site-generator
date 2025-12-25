@@ -16,9 +16,9 @@ The terminal pauses. Then:
 Protected branch update failed
 ```
 
-Oh right. Main is protected. You need admin override.
+Right. Main is protected.
 
-You have the admin password (you definitely shouldn't have this). You could use it...
+You have the admin password. (You shouldn't, but you do.)
 
 ## 🙏 [Override protection and pray](/panic-deploy/force-push/pray)
 

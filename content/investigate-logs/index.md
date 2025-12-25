@@ -2,7 +2,7 @@
 
 **Friday, 4:52 PM**
 
-You take a deep breath and open the CI/CD dashboard. The logs are a mess, but you're a professional. You've debugged worse.
+Deep breath. You open the CI/CD dashboard. The logs are a mess, but whatever. You've seen worse.
 
 The error message stares back at you:
 
@@ -12,7 +12,7 @@ FATAL ERROR: Reached heap limit Allocation failed
 JavaScript heap out of memory
 ```
 
-Interesting. The build is running out of memory. But this worked yesterday...
+Wait. Out of memory? This worked fine yesterday.
 
 You check the recent commits:
 
@@ -22,7 +22,7 @@ chore: update dependencies
 fix: typo in README
 ```
 
-Two paths emerge in your investigation:
+You see two possibilities:
 
 ## 🔧 [Check the CI/CD pipeline configuration](/investigate-logs/check-ci-pipeline)
 

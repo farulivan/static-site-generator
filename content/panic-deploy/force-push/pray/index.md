@@ -51,4 +51,4 @@ You got away with it. The force push worked. The revert was correct. The stars a
 
 **Warning:** This success might make you overconfident. Don't do this again.
 
-**[🏠 Start a new adventure](/start)** | **[📊 View all endings](/endings)**
+[🏠 Start a new adventure](/start) | [📊 View all endings](/endings)

@@ -32,11 +32,11 @@ You push, create a PR, and trigger the pipeline.
 
 > **#incidents**: "Site is back up! Login working. Crisis averted."
 
-Your manager DMs you: _"Good work staying calm and debugging properly. Write up a post-mortem on Monday."_
+Your manager DMs you: _"Nice work. Post-mortem on Monday."_
 
 ## 🎉 Victory: The Professional
 
-You fixed the issue properly, documented it, and learned from it. The intern gets a gentle code review lesson on Monday about not removing "comments" that are actually configuration.
+You fixed it right. Documented everything. The intern gets a code review lesson Monday about not deleting config that looks like comments.
 
 **Ending Stats:**
 - Time to resolution: 28 minutes
@@ -52,4 +52,4 @@ You fixed the issue properly, documented it, and learned from it. The intern get
 - Proper debugging beats panic every time
 - Documentation saves future you
 
-**[🏠 Start a new adventure](/start)** | **[📊 View all endings](/endings)**
+[🏠 Start a new adventure](/start) | [📊 View all endings](/endings)

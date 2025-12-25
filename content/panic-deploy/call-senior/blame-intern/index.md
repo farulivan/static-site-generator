@@ -44,4 +44,4 @@ You tried to throw an intern under the bus for your own mistake. It backfired sp
 
 **Monday update:** You're assigned to mandatory code review training and removed from the deployment team.
 
-**[🔄 Try again](/start)** | **[📊 View all endings](/endings)**
+[🔄 Try again](/start) | [📊 View all endings](/endings)

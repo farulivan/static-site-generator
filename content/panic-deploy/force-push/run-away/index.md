@@ -44,4 +44,4 @@ You ran away from the problem. The company spent the weekend in crisis mode. The
 
 **Life lesson:** Face your mistakes. Your team would have helped.
 
-**[🔄 Try again](/start)** | **[📊 View all endings](/endings)**
+[🔄 Try again](/start) | [📊 View all endings](/endings)

@@ -29,11 +29,12 @@ This isn't just a story—it's a simulation of every developer's worst nightmare
 
 ## 🚀 Start Your Adventure
 
-### [Begin: The Deployment Incident](/start)
+<a href="/start" class="cta-button">Begin: The Deployment Incident</a>
 
 ---
 
-### 📈 Story Map
+<details>
+<summary>📈 Story Map (Spoilers!)</summary>
 
 ```
 The Incident
@@ -52,6 +53,8 @@ The Incident
         ├─ ✅ Admit Mistake (Mentored)
         └─ ☠️ Blame Intern (Karma)
 ```
+
+</details>
 
 ### 🎓 What You'll Learn
 

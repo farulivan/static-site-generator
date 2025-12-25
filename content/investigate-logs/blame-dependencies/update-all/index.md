@@ -49,4 +49,4 @@ You turned a simple memory issue into a nightmare of breaking changes. You made 
 - Breaking changes need testing
 - "Update everything" is never the answer
 
-**[🔄 Try again](/start)** | **[📊 View all endings](/endings)**
+[🔄 Try again](/start) | [📊 View all endings](/endings)

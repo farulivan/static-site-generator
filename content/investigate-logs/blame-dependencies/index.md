@@ -15,7 +15,7 @@ You run `git diff HEAD~1 package.json` and your jaw drops:
   }
 ```
 
-Someone updated Chart.js to v4 (breaking changes!) and added a bunch of heavy libraries. The bundle size probably exploded.
+Chart.js v4 (breaking changes!) plus a bunch of heavy libraries. The bundle size exploded.
 
 You check the bundle analyzer output from the last successful build: **2.3 MB**
 
@@ -23,11 +23,11 @@ Current build attempt: **8.7 MB** 😱
 
 ## ⏮️ [Rollback the dependencies](/investigate-logs/blame-dependencies/rollback)
 
-Revert the package.json to the previous version. Ship the old code. Fix it properly on Monday. Safe and boring.
+Revert package.json. Ship the old code. Fix it Monday. Safe and boring.
 
 ## 🚀 [Update ALL dependencies to latest](/investigate-logs/blame-dependencies/update-all)
 
-Maybe the issue is that we're not on the LATEST latest? Update everything to the newest versions. YOLO.
+Maybe we need the LATEST latest? Update everything. YOLO.
 
 ---
 

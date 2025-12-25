@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background -->
+  <rect width="100" height="100" fill="#0b0f1a" rx="20"/>
+  
+  <!-- Terminal window -->
+  <rect x="15" y="25" width="70" height="50" fill="#111827" rx="4" stroke="#22f3aa" stroke-width="1.5"/>
+  
+  <!-- Terminal dots -->
+  <circle cx="22" cy="32" r="2" fill="#6b7280"/>
+  <circle cx="30" cy="32" r="2" fill="#6b7280"/>
+  <circle cx="38" cy="32" r="2" fill="#6b7280"/>
+  
+  <!-- Code prompt symbol -->
+  <text x="25" y="55" font-family="monospace" font-size="20" fill="#22f3aa" font-weight="bold">&gt;</text>
+  
+  <!-- Cursor -->
+  <rect x="40" y="42" width="12" height="16" fill="#22f3aa" opacity="0.8"/>
+</svg>

@@ -43,4 +43,4 @@ You chose the safe, boring solution. Production is up. You can fix it properly n
 
 **Technical debt created:** Medium (need to update dependencies properly)
 
-**[🏠 Start a new adventure](/start)** | **[📊 View all endings](/endings)**
+[🏠 Start a new adventure](/start) | [📊 View all endings](/endings)

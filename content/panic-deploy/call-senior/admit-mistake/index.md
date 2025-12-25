@@ -43,4 +43,4 @@ You admitted your mistake, asked for help, and learned from someone experienced.
 
 **Bonus:** Sarah offers to pair program with you next week to review deployment best practices.
 
-**[🏠 Start a new adventure](/start)** | **[📊 View all endings](/endings)**
+[🏠 Start a new adventure](/start) | [📊 View all endings](/endings)

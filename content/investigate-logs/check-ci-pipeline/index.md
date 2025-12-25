@@ -2,7 +2,7 @@
 
 **Friday, 4:58 PM**
 
-You dive into the `.gitlab-ci.yml` file (or `.github/workflows/deploy.yml` if you're a GitHub person). 
+You open `.gitlab-ci.yml` (or `.github/workflows/deploy.yml` if you're on GitHub). 
 
 Something catches your eye immediately:
 
@@ -23,9 +23,9 @@ Date: Yesterday
 Message: "cleanup: remove unused comments"
 ```
 
-The intern. Of course. They thought it was just a comment, but it was actually configuring the container memory.
+The intern. Of course. Thought it was a comment. It wasn't.
 
-You also notice the analytics dashboard commit added a **massive** dependency that bloats the build.
+The analytics dashboard commit also added a huge dependency. That explains the memory spike.
 
 ## ✅ [Fix the YAML and restore memory limits](/investigate-logs/check-ci-pipeline/fix-yaml)
 

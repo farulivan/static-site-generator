@@ -16,11 +16,11 @@ There's a pause. You can hear her thinking.
 
 ## 🎯 [Admit your mistake and explain clearly](/panic-deploy/call-senior/admit-mistake)
 
-Be honest. Tell her you deployed without checking the staging environment first. Explain the error. Ask for help like a professional.
+Be honest. You deployed without checking staging. Explain the error. Ask for help.
 
 ## 😈 [Blame the intern](/panic-deploy/call-senior/blame-intern)
 
-"Alex changed some config files and broke everything. I'm just trying to clean up their mess." Throw someone under the bus to save yourself.
+"Alex broke the config. I'm just trying to fix their mess." Throw them under the bus.
 
 ---
 

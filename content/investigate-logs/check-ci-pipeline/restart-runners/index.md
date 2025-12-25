@@ -41,4 +41,4 @@ You wasted 27 minutes clicking "restart" instead of debugging. The issue was nev
 - Wasted time and looked incompetent
 - The real fix was simple once someone looked
 
-**[🔄 Try again](/start)** | **[📊 View all endings](/endings)**
+[🔄 Try again](/start) | [📊 View all endings](/endings)
