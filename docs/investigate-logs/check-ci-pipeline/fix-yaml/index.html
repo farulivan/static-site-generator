@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>✅ The Proper Fix | Dev Adventure</title>
+    <link rel="icon" type="image/svg+xml" href="/static-site-generator/favicon.svg" />
+    <link href="/static-site-generator/index.css" rel="stylesheet" />
+    <meta name="description" content="An interactive developer adventure - your choices matter" />
+  </head>
+
+  <body>
+    <article><div><h1>✅ The Proper Fix</h1><p><b>Friday, 5:15 PM</b></p><p>You create a new branch, fix the YAML configuration:</p><pre><code>build:
+  image: node:18-alpine
+  script:
+    - npm ci
+    - npm run build
+  memory: 4GB  # Restored and increased for new dashboard
+  timeout: 15m
+</code></pre><p>You commit with a clear message:</p><pre><code>fix: restore container memory limits for build
+Uncommented memory configuration (removed by mistake)
+Increased from 2GB to 4GB to handle new analytics dashboard
+Added timeout to prevent hanging builds
+Fixes incident-2024-12-20
+</code></pre><p>You push, create a PR, and trigger the pipeline.</p><p><b>5:18 PM</b> - Build starts...   <b>5:22 PM</b> - Tests passing...   <b>5:25 PM</b> - Deployment successful! ✅</p><blockquote><b>#incidents</b>: "Site is back up! Login working. Crisis averted."</blockquote><p>Your manager DMs you: <i>"Nice work. Post-mortem on Monday."</i></p><h2>🎉 Victory: The Professional</h2><p>You fixed it right. Documented everything. The intern gets a code review lesson Monday about not deleting config that looks like comments.</p><p><b>Ending Stats:</b> - Time to resolution: 28 minutes - Reputation: +50 (Professional debugger) - Stress level: Medium → Low - Career trajectory: Upward ↗️</p><p>---</p><h3>What you learned:
+- Always check CI/CD configs after dependency updates
+- Memory limits matter for large builds
+- Proper debugging beats panic every time
+- Documentation saves future you</h3><p><a href="/static-site-generator/start">🏠 Start a new adventure</a> | <a href="/static-site-generator/endings">📊 View all endings</a></p></div></article>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>🔍 Investigating the Logs | Dev Adventure</title>
+    <link rel="icon" type="image/svg+xml" href="/static-site-generator/favicon.svg" />
+    <link href="/static-site-generator/index.css" rel="stylesheet" />
+    <meta name="description" content="An interactive developer adventure - your choices matter" />
+  </head>
+
+  <body>
+    <article><div><h1>🔍 Investigating the Logs</h1><p><b>Friday, 4:52 PM</b></p><p>Deep breath. You open the CI/CD dashboard. The logs are a mess, but whatever. You've seen worse.</p><p>The error message stares back at you:</p><pre><code>Step 7/12: RUN npm run build
+FATAL ERROR: Reached heap limit Allocation failed
+JavaScript heap out of memory
+</code></pre><p>Wait. Out of memory? This worked fine yesterday.</p><p>You check the recent commits:</p><pre><code>feat: add new analytics dashboard
+chore: update dependencies
+fix: typo in README
+</code></pre><p>You see two possibilities:</p><h2>🔧 <a href="/static-site-generator/investigate-logs/check-ci-pipeline">Check the CI/CD pipeline configuration</a></h2><p>Maybe someone changed the Docker container specs or the build configuration. The pipeline itself might be misconfigured.</p><h2>📦 <a href="/static-site-generator/investigate-logs/blame-dependencies">Investigate the dependency updates</a></h2><p>That <code>chore: update dependencies</code> commit looks suspicious. Dependencies are always the culprit, right?</p><p>---</p><p><b>Time elapsed: 5 minutes</b></p><p><i>The CEO is still in the channel. Choose your investigation path.</i></p></div></article>
+  </body>
+</html>
