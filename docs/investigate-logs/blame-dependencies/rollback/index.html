@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>⏮️ The Safe Rollback | Dev Adventure</title>
+    <link rel="icon" type="image/svg+xml" href="/static-site-generator/favicon.svg" />
+    <link href="/static-site-generator/index.css" rel="stylesheet" />
+    <meta name="description" content="An interactive developer adventure - your choices matter" />
+  </head>
+
+  <body>
+    <article><div><h1>⏮️ The Safe Rollback</h1><p><b>Friday, 5:08 PM</b></p><p>You create a quick revert commit:</p><pre><code>git revert abc123 -m "Revert dependency updates - causing OOM in build"
+git push origin main
+</code></pre><p>The pipeline triggers. You watch nervously.</p><p><b>5:11 PM</b> - Build starts...   <b>5:14 PM</b> - Build completes successfully   <b>5:16 PM</b> - Deployment successful! ✅</p><blockquote><b>#incidents</b>: "Site is back online. What happened?"</blockquote><p>You post in the channel:</p><p><i>"Reverted recent dependency updates that caused build memory issues. Site is stable. Will investigate proper fix on Monday with increased build resources."</i></p><p>Your manager gives you a 👍 reaction.</p><h2>🎉 Victory: The Pragmatist</h2><p>You chose the safe, boring solution. Production is up. You can fix it properly next week with proper testing.</p><p><b>Ending Stats:</b> - Time to resolution: 21 minutes - Reputation: +35 (Reliable under pressure) - Stress level: Medium → Low - Career trajectory: Steady →</p><p>---</p><h3>What you learned:
+- Sometimes the best fix is a revert
+- Ship working code, optimize later
+- Friday deployments are dangerous
+- You can always fix it properly on Monday</h3><p><b>Technical debt created:</b> Medium (need to update dependencies properly)</p><p><a href="/static-site-generator/start">🏠 Start a new adventure</a> | <a href="/static-site-generator/endings">📊 View all endings</a></p></div></article>
+  </body>
+</html>

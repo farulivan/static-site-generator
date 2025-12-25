@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>📦 Dependency Investigation | Dev Adventure</title>
+    <link rel="icon" type="image/svg+xml" href="/static-site-generator/favicon.svg" />
+    <link href="/static-site-generator/index.css" rel="stylesheet" />
+    <meta name="description" content="An interactive developer adventure - your choices matter" />
+  </head>
+
+  <body>
+    <article><div><h1>📦 Dependency Investigation</h1><p><b>Friday, 5:01 PM</b></p><p>You run <code>git diff HEAD~1 package.json</code> and your jaw drops:</p><pre><code>  "dependencies": {
+-   "chart.js": "^3.9.1",
++   "chart.js": "^4.4.0",
++   "react-big-calendar": "^1.8.5",
++   "moment": "^2.29.4",
++   "moment-timezone": "^0.5.43",
++   "lodash": "^4.17.21"
+  }
+</code></pre><p>Chart.js v4 (breaking changes!) plus a bunch of heavy libraries. The bundle size exploded.</p><p>You check the bundle analyzer output from the last successful build: <b>2.3 MB</b></p><p>Current build attempt: <b>8.7 MB</b> 😱</p><h2>⏮️ <a href="/static-site-generator/investigate-logs/blame-dependencies/rollback">Rollback the dependencies</a></h2><p>Revert package.json. Ship the old code. Fix it Monday. Safe and boring.</p><h2>🚀 <a href="/static-site-generator/investigate-logs/blame-dependencies/update-all">Update ALL dependencies to latest</a></h2><p>Maybe we need the LATEST latest? Update everything. YOLO.</p><p>---</p><p><b>Time elapsed: 14 minutes</b></p><p><i>Dependencies: the cause of, and solution to, all of life's problems.</i></p></div></article>
+  </body>
+</html>

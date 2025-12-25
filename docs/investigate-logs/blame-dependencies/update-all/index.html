@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>🚀 Dependency Hell | Dev Adventure</title>
+    <link rel="icon" type="image/svg+xml" href="/static-site-generator/favicon.svg" />
+    <link href="/static-site-generator/index.css" rel="stylesheet" />
+    <meta name="description" content="An interactive developer adventure - your choices matter" />
+  </head>
+
+  <body>
+    <article><div><h1>🚀 Dependency Hell</h1><p><b>Friday, 5:05 PM</b></p><p>You think: "If some updates caused issues, maybe we need ALL the updates!"</p><pre><code>npm update --latest
+npm install
+</code></pre><p>Your <code>package.json</code> explodes with changes:</p><pre><code>Updated 247 packages
+Added 89 packages
+Removed 12 packages
+</code></pre><p>You commit and push. The build starts...</p><p><b>5:08 PM</b> - Build fails: <code>Cannot find module 'react-dom/client'</code>   <b>5:10 PM</b> - You fix that, push again   <b>5:12 PM</b> - Build fails: <code>TypeError: createContext is not a function</code>   <b>5:15 PM</b> - You fix that, push again   <b>5:18 PM</b> - Build fails: <code>Breaking change in Chart.js v5 API</code>   <b>5:22 PM</b> - You're fixing breaking changes one by one   <b>5:35 PM</b> - Still failing   <b>5:47 PM</b> - The senior engineer takes over</p><p>She reverts everything and fixes it properly in 10 minutes.</p><h2>☠️ Game Over: Dependency Hell</h2><p>You turned a simple memory issue into a nightmare of breaking changes. You made it worse.</p><p><b>Ending Stats:</b> - Time wasted: 42 minutes - Reputation: -50 (Made it worse) - Stress level: MAXIMUM - Packages broken: 247 - Career trajectory: Downward ↘️</p><p>---</p><h3>What went wrong:
+- Never update all dependencies during an incident
+- You created 247 new problems
+- Breaking changes need testing
+- "Update everything" is never the answer</h3><p><a href="/static-site-generator/start">🔄 Try again</a> | <a href="/static-site-generator/endings">📊 View all endings</a></p></div></article>
+  </body>
+</html>
