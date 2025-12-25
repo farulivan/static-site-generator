@@ -309,7 +309,8 @@ code block
 
     def test_extract_title_empty_after_hash(self):
         md = "#"
-        self.assertEqual(extract_title(md), "")
+        with self.assertRaises(ValueError):
+            extract_title(md)
 
     def test_extract_title_no_space(self):
         md = "#Hello"

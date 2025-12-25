@@ -20,7 +20,7 @@ class TestLeafNode(unittest.TestCase):
         node = LeafNode("p", None)
         with self.assertRaises(ValueError) as cm:
             node.to_html()
-        self.assertEqual(str(cm.exception), "Value should not be None")
+        self.assertEqual(str(cm.exception), "Value cannot be empty")
 
     def test_leaf_multiple_props(self):
         node = LeafNode("a", "Click", {"href": "http://example.com", "target": "_blank"})
