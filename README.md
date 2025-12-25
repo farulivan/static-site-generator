@@ -14,7 +14,7 @@ This SSG transforms Markdown files into a complete static website with:
 
 ## 🚀 Live Example
 
-**[Dev Adventure](https://your-username.github.io/static-site-generator/)** - An interactive choose-your-own-adventure story about a production deployment gone wrong. This demonstrates the SSG's capabilities:
+**[Dev Adventure](https://farulivan.github.io/static-site-generator/)** - An interactive choose-your-own-adventure story about a production deployment gone wrong. This demonstrates the SSG's capabilities:
 
 - Branching narrative with multiple paths
 - 8 different endings based on choices
