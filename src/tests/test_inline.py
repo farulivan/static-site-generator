@@ -1,7 +1,6 @@
 import unittest
-from text_utils import split_nodes_delimiter, extract_markdown_images, extract_markdown_links, split_nodes_image, split_nodes_link
-from textnode import TextNode
-from enums import TextType
+from parsers.inline import split_nodes_delimiter, extract_markdown_images, extract_markdown_links, split_nodes_image, split_nodes_link
+from models import TextNode, TextType
 
 class TestTextUtils(unittest.TestCase):
     def test_split_nodes_delimiter_basic(self):
@@ -213,7 +212,6 @@ class TestTextUtils(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_split_nodes_image_and_link_interaction_complex(self):
-        # Test multiple interleaved images and links
         node = TextNode("![a](u1) and [l1](v1) then ![b](u2) and [l2](v2)", TextType.TEXT)
         after_image = split_nodes_image([node])
         result = split_nodes_link(after_image)

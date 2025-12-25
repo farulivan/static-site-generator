@@ -1,6 +1,5 @@
 import unittest
-from parentnode import ParentNode
-from leafnode import LeafNode
+from models import ParentNode, LeafNode
 
 class TestParentNode(unittest.TestCase):
     def test_to_html_with_children(self):
@@ -53,7 +52,6 @@ class TestParentNode(unittest.TestCase):
         self.assertEqual(str(cm.exception), "All children must be HTMLNode instances")
 
     def test_deep_nesting(self):
-        # 5 levels deep
         leaf = LeafNode("b", "deep")
         parent1 = ParentNode("span", [leaf])
         parent2 = ParentNode("div", [parent1])

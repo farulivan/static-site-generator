@@ -1,20 +1,17 @@
 import unittest
 from converters import (
-    markdown_to_blocks,
     markdown_to_html_node,
     text_node_to_html_node,
     text_to_textnodes,
-    block_to_block_type,
     paragraph_block_to_html_node,
     heading_block_to_html_node,
     code_block_to_html_node,
     quote_block_to_html_node,
     unordered_list_block_to_html_node,
     ordered_list_block_to_html_node,
-    extract_title,
 )
-from textnode import TextNode
-from enums import BlockType, TextType
+from parsers import markdown_to_blocks, block_to_block_type, extract_title
+from models import TextNode, BlockType, TextType
 
 class TestConverters(unittest.TestCase):
     def test_text_node_to_html_node_text(self):
@@ -129,19 +126,14 @@ This is the same paragraph on a new line
     def test_block_to_block_type_ordered_list(self):
         self.assertEqual(block_to_block_type("1. item"), BlockType.ORDERED_LIST)
         self.assertEqual(block_to_block_type("1. item1\n2. item2\n3. item3"), BlockType.ORDERED_LIST)
-        # Invalid: not starting from 1
         self.assertEqual(block_to_block_type("2. item"), BlockType.PARAGRAPH)
-        # Invalid: not sequential
         self.assertEqual(block_to_block_type("1. item\n3. item"), BlockType.PARAGRAPH)
-        # Invalid: not numbers
         self.assertEqual(block_to_block_type("a. item"), BlockType.PARAGRAPH)
 
     def test_block_to_block_type_paragraph(self):
         self.assertEqual(block_to_block_type("Plain text"), BlockType.PARAGRAPH)
         self.assertEqual(block_to_block_type("Text\nMore text"), BlockType.PARAGRAPH)
-        # Heading without space
         self.assertEqual(block_to_block_type("#No space"), BlockType.PARAGRAPH)
-        # Code not starting/ending
         self.assertEqual(block_to_block_type("```code"), BlockType.PARAGRAPH)
 
     def test_paragraphs(self):

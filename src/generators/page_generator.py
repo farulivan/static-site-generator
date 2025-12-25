@@ -1,5 +1,6 @@
 import os
-from converters import markdown_to_html_node, extract_title
+from converters import markdown_to_html_node
+from parsers import extract_title
 
 def generate_page(from_path, template_path, dest_path, basepath):
     print(f"Generating page from {from_path} to {dest_path} using {template_path}")

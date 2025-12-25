@@ -1,4 +1,4 @@
-from htmlnode import HTMLNode
+from .html_node import HTMLNode
 
 class LeafNode(HTMLNode):
     def __init__(self, tag: str, value: str, props: dict | None = None):
@@ -10,7 +10,6 @@ class LeafNode(HTMLNode):
         if self.value is None or self.value == "":
             if self.tag not in ['img', 'br', 'hr', 'input', 'meta']:
                 raise ValueError("Value cannot be empty")
-        # build the tag
         attrs = ""
         if self.props:
             attrs = " " + " ".join(f'{k}="{v}"' for k, v in self.props.items())

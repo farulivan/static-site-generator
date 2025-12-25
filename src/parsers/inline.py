@@ -1,6 +1,5 @@
-from ast import Tuple
-from textnode import TextNode, TextType
-from typing import List
+from typing import List, Tuple
+from models import TextNode, TextType
 import re
 
 def split_nodes_delimiter(old_nodes: List[TextNode], delimiter: str, text_type: TextType) -> List[TextNode]:
@@ -14,10 +13,10 @@ def split_nodes_delimiter(old_nodes: List[TextNode], delimiter: str, text_type: 
                 raise ValueError(f"Invalid markdown syntax: unmatched delimiter '{delimiter}' in text '{node.text}'")
             for i, part in enumerate(parts):
                 if i % 2 == 0:
-                    if part:  # non-empty text
+                    if part:
                         new_nodes.append(TextNode(part, TextType.TEXT))
                 else:
-                    if part:  # non-empty delimited text
+                    if part:
                         new_nodes.append(TextNode(part, text_type))
     return new_nodes
 
@@ -43,11 +42,11 @@ def split_nodes_image(old_nodes: List[TextNode]) -> List[TextNode]:
                 current_text = text
                 for alt, url in images:
                     sections = current_text.split(f"![{alt}]({url})", 1)
-                    if sections[0]:  # before, non-empty
+                    if sections[0]:
                         new_nodes.append(TextNode(sections[0], TextType.TEXT))
                     new_nodes.append(TextNode(alt, TextType.IMAGE, url))
                     current_text = sections[1] if len(sections) > 1 else ""
-                if current_text:  # remaining text
+                if current_text:
                     new_nodes.append(TextNode(current_text, TextType.TEXT))
     return new_nodes
 
@@ -65,10 +64,10 @@ def split_nodes_link(old_nodes: List[TextNode]) -> List[TextNode]:
                 current_text = text
                 for alt, url in links:
                     sections = current_text.split(f"[{alt}]({url})", 1)
-                    if sections[0]:  # before, non-empty
+                    if sections[0]:
                         new_nodes.append(TextNode(sections[0], TextType.TEXT))
                     new_nodes.append(TextNode(alt, TextType.LINK, url))
                     current_text = sections[1] if len(sections) > 1 else ""
-                if current_text:  # remaining text
+                if current_text:
                     new_nodes.append(TextNode(current_text, TextType.TEXT))
     return new_nodes

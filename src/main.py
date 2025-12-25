@@ -1,6 +1,6 @@
 import sys
-from file_utils import copy_directory_recursive
-from page_generator import generate_pages_recursive
+from utils import copy_directory_recursive
+from generators import generate_pages_recursive
 
 def main():
     basepath = sys.argv[1] if len(sys.argv) > 1 else '/'

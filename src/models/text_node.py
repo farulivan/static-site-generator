@@ -1,4 +1,4 @@
-from enums import TextType
+from .enums import TextType
 
 class TextNode:
     def __init__(self, text, text_type: TextType, url=None):
